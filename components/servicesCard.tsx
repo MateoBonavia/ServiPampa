@@ -1,20 +1,23 @@
 import Image from 'next/image';
 import React from 'react';
+import { StaticImageData } from 'next/image';
 
 interface cardProps {
   title: string;
   description: string;
-  image: string;
+  image: StaticImageData;
 }
 
-const servicesCard = ({ title, description, image }: cardProps) => {
+const ServicesCard = ({ title, description, image }: cardProps) => {
   return (
-    <div>
-      <Image src={image} alt={title} />
-      <h4>{title}</h4>
-      <p>{description}</p>
+    <div className="bg-[#7C7CA4] rounded-lg">
+      <Image src={image} alt={title} className="rounded-tl-lg rounded-tr-lg" />
+      <div className="p-2">
+        <h4 className="text-lg">{title}</h4>
+        <p className="text-sm">{description}</p>
+      </div>
     </div>
   );
 };
 
-export default servicesCard;
+export default ServicesCard;
