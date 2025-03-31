@@ -1,0 +1,57 @@
+@import 'tailwindcss';
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+
+  --animate-autoRun: autoRun 10s linear infinite;
+
+  @keyframes autoRun {
+    from {
+      left: 100%;
+    }
+    to {
+      left: calc(var(--width) * -1);
+    }
+  }
+
+  --animate-reversePlay: reversePlay 10s linear infinite;
+
+  @keyframes reversePlay {
+    from {
+      left: calc(var(--width) * -1);
+    }
+    to {
+      left: 100%;
+    }
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+/* body {
+  background: rgb(100, 100, 142);
+  background: linear-gradient(
+    0deg,
+    rgba(100, 100, 142, 1) 0%,
+    rgba(116, 116, 152, 1) 100%
+  );
+  height: 100vh;
+  background-repeat: no-repeat;
+} */
+
+body {
+  background: rgba(100, 100, 142, 1);
+}
