@@ -2,7 +2,7 @@ export default function ContactoPage() {
   return (
     <div>
       <h1>Contacto</h1>
-      <p>Ponte en contacto con nosotros para más información.</p>
+      <p>Ponte en contacto con nosotros para más información...</p>
     </div>
   );
 }
