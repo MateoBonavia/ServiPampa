@@ -21,9 +21,9 @@ export default function ServiciosPage() {
   const cards = [firstCard, secondCard];
 
   return (
-    <div className="text-white">
+    <div className="flex flex-col gap-6 text-white mt-6 md:pr-8 md:pl-8 lg:pr-24 lg:pl-24">
       {/* Top part */}
-      <div className="mt-4 mb-4">
+      <div className="">
         <h2 className="text-xl font-semibold mb-2">Nuestros Servicios</h2>
         <p className="text-sm">
           En SERVIPAMPA, estamos para acompañarte en cada viaje, con un servicio
@@ -33,19 +33,20 @@ export default function ServiciosPage() {
       </div>
 
       {/* Cards */}
-      <div className="flex flex-col gap-6 mb-4">
-        {cards.map((e) => (
+      <div className="flex flex-col gap-6">
+        {cards.map((e, index) => (
           <ServicesCard
             title={e.title}
             description={e.description}
             image={e.image}
-            key={e.title} // Use a unique key for each card
+            reverse={index !== 0} // Corrige la lógica para la propiedad reverse
+            key={e.title} // Use una clave única para cada tarjeta
           />
         ))}
       </div>
 
       {/* Final text */}
-      <p className="text-sm text-justify mb-4">
+      <p className="text-sm text-justify mb-4 lg:text-base">
         Ademas contamos con duchas y un amplio estacionamiento. Porque más que
         una estación de servicio, somos un punto de encuentro en la localidad.
         Te esperamos en SERVIPAMPA, donde cada carga es con atención

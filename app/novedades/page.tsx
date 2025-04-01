@@ -25,7 +25,7 @@ export default function NovedadesPage() {
   }, [emblaApi]);
 
   return (
-    <div className="flex flex-col gap-12 text-white mt-6 md:pr-8 md:pl-8 lg:pr-24 lg:pl-24 animate-spin-slow">
+    <div className="flex flex-col gap-12 text-white mt-6 md:pr-8 md:pl-8 lg:pr-24 lg:pl-24">
       {/* Promociones */}
       <div>
         <h2 className="mb-4 text-2xl font-bold lg:text-4xl">
