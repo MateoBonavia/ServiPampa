@@ -114,9 +114,9 @@ export default function ContactoPage() {
         </div>
 
         {/* Location and time */}
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-8">
           {/* Morrison */}
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col gap-3">
             {/* Location */}
             <div className="flex items-center gap-2">
               <Image src={location} alt="Ubicación" className="w-6" />
@@ -125,12 +125,15 @@ export default function ContactoPage() {
             {/* Time */}
             <div className="flex items-center gap-2">
               <Image src={clock} alt="Horario" className="w-6" />
-              <p>Horarios</p>
+              <p>
+                Lunes a Sábados - 07:00 a 22:00 <br /> Domingos - 09:00 a 13: 00
+                y 17:00 a 21:00
+              </p>
             </div>
           </div>
 
           {/* Escalante */}
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col gap-3">
             {/* Location */}
             <div className="flex items-center gap-2">
               <Image src={location} alt="Ubicación" className="w-6" />
@@ -139,7 +142,10 @@ export default function ContactoPage() {
             {/* Time */}
             <div className="flex items-center gap-2">
               <Image src={clock} alt="Horario" className="w-6" />
-              <p>Horarios</p>
+              <p>
+                Lunes a Sábados - 07:00 a 22:00 <br /> Domingos - 09:00 a 13: 00
+                y 17:00 a 21:00
+              </p>
             </div>
           </div>
         </div>
