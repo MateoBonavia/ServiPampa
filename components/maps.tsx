@@ -61,17 +61,17 @@ function Maps() {
 
   return (
     <div className="flex flex-col gap-2">
-      <div className="h-100 w-full rounded-lg" ref={mapRef}></div>
+      <div className="h-100 w-full rounded-lg lg:w-240" ref={mapRef}></div>
       {/* Buttons to change the location */}
       <div className="text-white flex gap-4">
         <button
-          className="bg-[#00001C] p-2 rounded-md"
+          className="bg-[#00001C] p-2 rounded-md hover:cursor-pointer"
           onClick={() => setLocation(locationMorrison)}
         >
           Morrison
         </button>
         <button
-          className="bg-[#00001C] p-2 rounded-md"
+          className="bg-[#00001C] p-2 rounded-md hover:cursor-pointer"
           onClick={() => setLocation(locationEscalante)}
         >
           Escalante
