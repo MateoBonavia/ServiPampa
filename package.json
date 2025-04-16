@@ -13,6 +13,7 @@
     "embla-carousel-autoplay": "^8.5.2",
     "embla-carousel-react": "^8.5.2",
     "next": "15.2.4",
+    "nextjs-toast-notify": "^1.36.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "resend": "^4.2.0"

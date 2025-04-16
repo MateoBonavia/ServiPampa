@@ -1,7 +1,6 @@
 import { EmailTemplate } from '@/components/emailTemplate';
 import { Resend } from 'resend';
 import { NextResponse, NextRequest } from 'next/server';
-import { NextApiRequest, NextApiResponse } from 'next';
 
 const resend = new Resend(process.env.RESEND_API_KEY!);
 
@@ -10,14 +9,20 @@ export async function POST(req: NextRequest, res: NextResponse) {
 
   const phone = mailData.phone;
   const message = mailData.message;
+  const recipient = mailData.recipient;
+
+  const mail =
+    recipient === 'morrison'
+      ? 'servipampamorrison@gmail.com'
+      : 'servipampaescalante@gmail.com';
 
   try {
     const { data, error } = await resend.emails.send({
       from: 'Acme <onboarding@resend.dev>',
-      to: ['mateobonavia@gmail.com'],
-      subject: mailData.name,
+      to: [mail],
+      subject: `Nuevo mensaje para ServiPampa de ${mailData.name}`,
       react: await EmailTemplate({ phone, message }),
-      text: 'Hello world',
+      text: 'ServiPampa',
     });
 
     if (error) {

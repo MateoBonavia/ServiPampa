@@ -9,16 +9,6 @@ import clock from '@/assets/svg/Contact/clock.svg';
 import ContactForm from '@/components/contactForm';
 
 export default function ContactoPage() {
-  const locationMorrison = {
-    lat: -32.58491647271772,
-    lng: -62.82959248843925,
-  };
-
-  const locationEscalante = {
-    lat: -33.175498032841745,
-    lng: -62.779081365295546,
-  };
-
   return (
     <div className="flex flex-col gap-8 md:pr-8 md:pl-8 lg:pr-24 lg:pl-24 lg:mt-12">
       <div className="flex flex-col gap-8 lg:flex-row-reverse lg:justify-between">

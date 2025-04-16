@@ -1,5 +1,6 @@
 'use client';
 
+import { showToast } from 'nextjs-toast-notify';
 import { useState } from 'react';
 
 export default function ContactForm() {
@@ -7,17 +8,70 @@ export default function ContactForm() {
     name: '',
     phone: '',
     message: '',
+    recipient: 'morrison',
   });
 
-  const sendEmail = async () => {
-    const jsonData = JSON.stringify(formData);
+  const sendEmail = async (e: React.FormEvent) => {
+    e.preventDefault();
 
-    const res = await fetch('/api/send', {
-      method: 'POST',
-      body: jsonData,
+    if (formData.name === '') {
+      showToast.error('Por favor, completa tu nombre.', {
+        duration: 4000,
+        progress: true,
+        position: 'bottom-right',
+        transition: 'bounceIn',
+        icon: '',
+        sound: false,
+      });
+    } else if (formData.phone === '') {
+      showToast.error('Por favor, completa tu teléfono.', {
+        duration: 4000,
+        progress: true,
+        position: 'bottom-right',
+        transition: 'bounceIn',
+        icon: '',
+        sound: false,
+      });
+    } else if (formData.message === '') {
+      showToast.error('Por favor, completa tu mensaje.', {
+        duration: 4000,
+        progress: true,
+        position: 'bottom-right',
+        transition: 'bounceIn',
+        icon: '',
+        sound: false,
+      });
+    } else {
+      const jsonData = JSON.stringify(formData);
+
+      const res = await fetch('/api/send', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: jsonData,
+      });
+      const data = await res.json();
+      resetFormData();
+
+      showToast.success('¡Email enviado con éxito!', {
+        duration: 4000,
+        progress: true,
+        position: 'bottom-right',
+        transition: 'bounceIn',
+        icon: '',
+        sound: false,
+      });
+    }
+  };
+
+  const resetFormData = () => {
+    setFormData({
+      name: '',
+      phone: '',
+      message: '',
+      recipient: 'morrison',
     });
-    const data = await res.json();
-    // console.log(data);
   };
 
   return (
@@ -29,18 +83,20 @@ export default function ContactForm() {
           posible!
         </p>
       </div>
-      <form className="flex flex-col gap-4 mt-4">
+      <form className="flex flex-col gap-4 mt-4" onSubmit={sendEmail}>
         <input
           type="text"
           placeholder="Nombre y apellido"
           className="border border-[#000] p-2 rounded"
           onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+          value={formData.name}
         />
         <input
           type="number"
           placeholder="Teléfono"
           className="border border-[#000] p-2 rounded"
           onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+          value={formData.phone}
         />
         <textarea
           placeholder="Mensaje"
@@ -48,11 +104,22 @@ export default function ContactForm() {
           onChange={(e) =>
             setFormData({ ...formData, message: e.target.value })
           }
+          value={formData.message}
         ></textarea>
+        <select
+          className="border border-[#000] p-2 rounded"
+          onChange={(e) =>
+            setFormData({ ...formData, recipient: e.target.value })
+          }
+          value={formData.recipient}
+        >
+          <option value="morrison">Enviar a Morrison</option>
+          <option value="escalante">Enviar a Escalante</option>
+        </select>
         <div className="flex justify-end">
           <button
             className="bg-[#00001C] text-white p-2 rounded w-30 hover:cursor-pointer"
-            onClick={sendEmail}
+            type="submit"
           >
             Enviar
           </button>

@@ -60,8 +60,11 @@ function Maps() {
   }, [location]);
 
   return (
-    <div className="flex flex-col gap-2">
-      <div className="h-100 w-full rounded-lg lg:w-240" ref={mapRef}></div>
+    <div className="flex flex-col gap-2 lg:h-full">
+      <div
+        className="h-100 w-full rounded-lg lg:w-240 lg:h-full"
+        ref={mapRef}
+      ></div>
       {/* Buttons to change the location */}
       <div className="text-white flex gap-4">
         <button
