@@ -12,7 +12,8 @@ export default function NavBar() {
         <Link href="/servicios">Servicios</Link>
         <Link href="/contacto">Contacto</Link>
       </div>
-      <div className="flex gap-2 justify-end items-center pr-1 md:col-span-2 lg:col-span-1">
+      {/* flex gap-2 justify-end items-center pr-1 md:col-span-2 lg:col-span-1 */}
+      <div className="hidden">
         <p className="hidden md:flex md:text-white md:text-sm lg:text-lg">
           Ingreso Clientes
         </p>

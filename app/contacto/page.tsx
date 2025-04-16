@@ -6,62 +6,25 @@ import facebook from '@/assets/svg/Contact/facebook.svg';
 import instagram from '@/assets/svg/Contact/instagram.svg';
 import location from '@/assets/svg/Contact/location-dot.svg';
 import clock from '@/assets/svg/Contact/clock.svg';
+import ContactForm from '@/components/contactForm';
 
 export default function ContactoPage() {
-  const locationMorrison = {
-    lat: -32.58491647271772,
-    lng: -62.82959248843925,
-  };
-
-  const locationEscalante = {
-    lat: -33.175498032841745,
-    lng: -62.779081365295546,
-  };
-
   return (
-    <div className="flex flex-col gap-8">
-      <div className="mt-8">
-        <Maps />
-      </div>
-
-      {/* Contact form */}
-      <div className="bg-[#ACACC4] rounded-lg p-2">
-        <div className="flex flex-col gap-2">
-          <h2 className="text-2xl font-semibold">Contacto</h2>
-          <p>
-            Completa tus datos y dejanos tu mensaje. Te respondemos lo antes
-            posible!
-          </p>
+    <div className="flex flex-col gap-8 md:pr-8 md:pl-8 lg:pr-24 lg:pl-24 lg:mt-12">
+      <div className="flex flex-col gap-8 lg:flex-row-reverse lg:justify-between">
+        <div className="mt-8 lg:mt-0">
+          <Maps />
         </div>
-        <form className="flex flex-col gap-4 mt-4">
-          <input
-            type="text"
-            placeholder="Nombre"
-            className="border border-[#000] p-2 rounded"
-          />
-          <input
-            type="email"
-            placeholder="Email"
-            className="border border-[#000] p-2 rounded"
-          />
-          <textarea
-            placeholder="Mensaje"
-            className="border border-[#000] p-2 rounded h-32"
-          ></textarea>
-          <div className="flex justify-end">
-            <button className="bg-[#00001C] text-white p-2 rounded w-30">
-              Enviar
-            </button>
-          </div>
-        </form>
+        {/* Contact form */}
+        <ContactForm />
       </div>
 
       {/* Contact data */}
-      <div className="bg-[#ACACC4] rounded-lg p-2 flex flex-col gap-10 mb-4">
+      <div className="bg-[#ACACC4] rounded-lg p-2 flex flex-col gap-10 mb-4 md:mx-16 md:px-8 md:py-4 lg:w-full lg:mx-0 lg:flex-row justify-between lg:px-30">
         {/* Morrison and Escalante data */}
-        <div className="flex justify-between">
+        <div className="flex justify-between md:justify-around lg:gap-18">
           <div className="flex flex-col gap-4">
-            <h3 className="text-xl font-semibold">Morrison</h3>
+            <h3 className="text-xl font-semibold md:text-2xl">Morrison</h3>
             <div className="flex flex-col gap-4">
               {/* Phone */}
               <div className="flex gap-2 items-center">
@@ -87,7 +50,7 @@ export default function ContactoPage() {
           </div>
 
           <div className="flex flex-col gap-4">
-            <h3 className="text-xl font-semibold">Escalante</h3>
+            <h3 className="text-xl font-semibold md:text-2xl">Escalante</h3>
             <div className="flex flex-col gap-4">
               {/* Phone */}
               <div className="flex gap-2 items-center">
@@ -114,7 +77,7 @@ export default function ContactoPage() {
         </div>
 
         {/* Location and time */}
-        <div className="flex flex-col gap-8">
+        <div className="flex flex-col items-center gap-8">
           {/* Morrison */}
           <div className="flex flex-col gap-3">
             {/* Location */}
