@@ -5,6 +5,8 @@ import gas from '../assets/svg/Home/gas.svg';
 import oil from '../assets/svg/Home/oil.svg';
 import shop from '../assets/svg/Home/shop.svg';
 
+const bannerUrl = process.env.NEXT_PUBLIC_BANNER_URL!;
+
 export default function Home() {
   return (
     <div className="mt-6 md:pr-8 md:pl-8 lg:pr-24 lg:pl-24">
@@ -26,9 +28,12 @@ export default function Home() {
         </div>
         <div className="bg-gray-900 opacity-75 h-full w-full rounded-md">
           <Image
-            src={Banner}
+            src={bannerUrl}
             alt="Banner"
+            fill
+            unoptimized
             className="relative h-full w-full object-cover rounded-md"
+            priority
           />
         </div>
       </div>

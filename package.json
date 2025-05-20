@@ -12,6 +12,7 @@
     "@googlemaps/js-api-loader": "^1.16.8",
     "embla-carousel-autoplay": "^8.5.2",
     "embla-carousel-react": "^8.5.2",
+    "firebase": "^11.7.3",
     "next": "15.2.4",
     "nextjs-toast-notify": "^1.36.0",
     "react": "^19.0.0",
